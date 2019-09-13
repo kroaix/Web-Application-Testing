@@ -1,4 +1,18 @@
 import React from 'react';
+import {
+  Button,
+  CardActions
+} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import AddIcon from '@material-ui/icons/Add';
+
+const useStyles = makeStyles({
+  cardActions: {
+    textAlign: 'center',
+    margin: '20px auto 10px',
+    display: 'inline-block'
+  },
+});
 
 const Dashboard = ({ ballCount, setBallCount, strikeCount, setStrikeCount }) => {
   const ballCountHandler = () => {
@@ -29,14 +43,14 @@ const Dashboard = ({ ballCount, setBallCount, strikeCount, setStrikeCount }) => 
     setBallCount(0)
     setStrikeCount(0)
   }
-
+  const classes = useStyles();
   return (
-    <div>
-      <button onClick={ballCountHandler}>Balls</button>
-      <button onClick={strikeCountHandler}>Strikes</button>
-      <button onClick={foulCountHandler}>Fouls</button>
-      <button onClick={hitCountHandler}>Hits</button>
-    </div>
+    <CardActions className={classes.cardActions}>
+      <Button variant="outlined" color="primary" onClick={ballCountHandler}>Ball <AddIcon fontSize="small" /></Button>
+      <Button variant="outlined" color="primary" onClick={strikeCountHandler}>Strike <AddIcon fontSize="small" /></Button>
+      <Button variant="outlined" color="primary" onClick={foulCountHandler}>Foul <AddIcon fontSize="small" /></Button>
+      <Button variant="outlined" color="primary" onClick={hitCountHandler}>Hit <AddIcon fontSize="small" /></Button>
+    </CardActions>
   )
 }
 

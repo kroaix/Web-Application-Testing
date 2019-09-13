@@ -6,5 +6,5 @@ afterEach(cleanup);
 
 test("verify ball text", () => {
   const { getAllByText } = render(<Dashboard />);
-  getAllByText("Balls");
+  getAllByText("Ball");
 })
