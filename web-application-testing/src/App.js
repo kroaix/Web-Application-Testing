@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 
 import Display from './components/Display';
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <CssBaseline />
       <h1>Baseball Scoreboard</h1>
       <Display 
         ballCount={ballCount}

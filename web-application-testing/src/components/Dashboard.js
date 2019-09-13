@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Dashboard = ({ ballCount, setBallCount, strikeCount, setStrikeCount }) => {
-
   const ballCountHandler = () => {
     if (ballCount === 3){
       setBallCount(0)
@@ -16,7 +15,7 @@ const Dashboard = ({ ballCount, setBallCount, strikeCount, setStrikeCount }) => 
       setBallCount(0)
       setStrikeCount(0)
     } else {
-      setStrikeCount(strikeCount + 1)
+      setStrikeCount((strikeCount) => strikeCount + 1)
     }
   }
 
@@ -30,7 +29,6 @@ const Dashboard = ({ ballCount, setBallCount, strikeCount, setStrikeCount }) => 
     setBallCount(0)
     setStrikeCount(0)
   }
-
 
   return (
     <div>
